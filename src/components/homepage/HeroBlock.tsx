@@ -47,7 +47,7 @@ export default function HeroBlock({ block }: HeroBlockProps) {
   }, [heroImage])
 
   return (
-    <section ref={ref} className="relative min-h-screen w-full overflow-hidden">
+    <section ref={ref} className="relative w-full overflow-hidden">
       {/* Background image with overlay */}
       <div
         className={`absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ${
@@ -74,7 +74,7 @@ export default function HeroBlock({ block }: HeroBlockProps) {
       </div>
 
       {/* Main content container */}
-      <div className="relative mx-auto h-full max-w-5xl px-4 sm:px-6 lg:px-8 py-24 z-10 flex flex-col justify-center items-center text-center min-h-screen">
+      <div className="relative mx-auto h-full max-w-5xl px-4 sm:px-6 lg:px-8 pt-24 z-10 flex flex-col justify-center items-center text-center">
         <motion.div
           initial="hidden"
           animate={controls}
