@@ -1,4 +1,5 @@
 import { Hero } from '@/blocks/homepage/hero/schema'
+import { HeroCards } from '@/blocks/homepage/hero-cards/schema'
 import { LandingAbout } from '@/blocks/homepage/home-about/schema'
 import { ServicesBlock } from '@/blocks/homepage/services/schema'
 import { OurTeam } from '@/blocks/homepage/our-team/schema'
@@ -32,6 +33,7 @@ export const Pages: CollectionConfig = {
       type: 'blocks',
       blocks: [
         Hero,
+        HeroCards,
         LandingAbout,
         ServicesBlock,
         OurTeam,

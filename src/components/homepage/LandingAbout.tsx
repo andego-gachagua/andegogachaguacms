@@ -30,12 +30,12 @@ export default function AboutUsSection({ block }: AboutUsBlockProps) {
     }
   }, [controls, inView])
 
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      transition: { duration: 0.5, ease: 'easeOut' },
     },
   }
 
@@ -44,85 +44,76 @@ export default function AboutUsSection({ block }: AboutUsBlockProps) {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   }
 
   return (
-    <section
-      ref={ref}
-      className="py-12 overflow-hidden relative bg-gradient-to-b from-white to-gray-50"
-    >
-      {/* Abstract decorative elements */}
-      <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-[#003566]/5 blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-[#003566]/3 blur-3xl" />
+    <section ref={ref} className="py-16 md:py-24 overflow-hidden relative bg-white">
+      {/* Subtle background elements */}
+      <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-transparent via-[#cb8547] to-transparent opacity-30" />
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#cb8547] via-transparent to-[#cb8547] opacity-30" />
 
-      {/* Geometric pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#003566" strokeWidth="0.5" />
-          </pattern>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-      </div>
-
-      <div className="xl:container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial="hidden"
           animate={controls}
           variants={staggerContainer}
-          className="max-w-4xl mx-auto"
+          className="max-w-5xl mx-auto"
         >
-          {/* Top decorative element */}
-          <motion.div variants={fadeInUp} className="mb-6 flex justify-center">
-            <div className="h-12 w-1 bg-[#003566]" />
-          </motion.div>
-
-          {/* Badge */}
-          <motion.div variants={fadeInUp} className="text-center mb-6">
-            <div className="inline-block px-4 py-1.5 rounded-full bg-[#003566]/10 text-[#003566] font-medium text-sm">
+          {/* Elegant section header */}
+          <motion.div variants={fadeIn} className="text-center mb-6">
+            <span className="inline-block px-4 py-1 text-[#cb8547] text-sm font-medium tracking-wider uppercase border-b border-[#cb8547]">
               About Us
-            </div>
+            </span>
           </motion.div>
 
-          {/* Heading with decorative elements */}
-          <motion.div variants={fadeInUp} className="text-center mb-12 relative">
-            <h2 className="font-serif text-4xl sm:text-5xl font-bold text-gray-900 relative inline-block">
+          {/* Main heading */}
+          <motion.div variants={fadeIn} className="text-center mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold text-gray-900 relative inline-block">
               {heading}
-              <div className="absolute -bottom-4 left-0 w-full h-1 bg-[#003566]" />
+              <div className="absolute -bottom-2 left-0 w-full h-px bg-[#cb8547] opacity-50" />
             </h2>
           </motion.div>
 
-          {/* Description with drop cap */}
-          <motion.div variants={fadeInUp} className="prose prose-lg lg:prose-xl max-w-none mx-auto">
-            <p className="leading-relaxed mb-8 text-justify about-p">{description}</p>
+          {/* Description with refined typography */}
+          <motion.div variants={fadeIn} className="mb-12">
+            <p className="text-gray-700 leading-relaxed text-base md:text-lg font-light text-justify">
+              {description}
+            </p>
           </motion.div>
 
-          {/* Stats section */}
-          <motion.div variants={fadeInUp} className="grid grid-cols-3 gap-8 my-16">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-[#003566] mb-2">40+</div>
-              <div className="text-gray-600">Combined Years of Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-[#003566] mb-2">5000+</div>
-              <div className="text-gray-600">Cases Won</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-[#003566] mb-2">98%</div>
-              <div className="text-gray-600">Client Satisfaction</div>
+          {/* Decorative divider */}
+          <motion.div variants={fadeIn} className="flex justify-center my-10">
+            <div className="flex items-center w-full max-w-xs">
+              <div className="flex-grow h-px bg-[#f0f1f0]"></div>
+              <div className="mx-4">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                    fill="#cb8547"
+                    opacity="0.7"
+                  />
+                </svg>
+              </div>
+              <div className="flex-grow h-px bg-[#f0f1f0]"></div>
             </div>
           </motion.div>
 
-          {/* CTA */}
-          <motion.div variants={fadeInUp} className="text-center mt-12">
+          {/* CTA with professional styling */}
+          <motion.div variants={fadeIn} className="text-center mt-10">
             <Link
               href="/who-we-are"
-              className="inline-flex items-center justify-center px-8 py-3 border-2 border-[#003566] text-[#003566] font-medium hover:bg-[#003566] hover:text-white transition-colors duration-200 rounded"
+              className="inline-flex items-center justify-center px-6 py-3 border border-[#cb8547] text-[#cb8547] bg-white hover:bg-[#cb8547] hover:text-white font-medium transition-colors duration-300 ease-in-out"
             >
-              Learn more about our expertise
+              Learn About Our Practice
               <svg
                 className="ml-2 w-4 h-4"
                 fill="none"
@@ -134,19 +125,15 @@ export default function AboutUsSection({ block }: AboutUsBlockProps) {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M9 5l7 7-7 7"
+                  d="M14 5l7 7-7 7"
                 />
               </svg>
             </Link>
           </motion.div>
 
-          {/* Bottom decorative element */}
-          <motion.div variants={fadeInUp} className="mt-20 flex justify-center" custom={6}>
-            <div className="flex space-x-2">
-              <div className="h-1 w-1 rounded-full bg-[#003566]" />
-              <div className="h-1 w-3 rounded-full bg-[#003566]" />
-              <div className="h-1 w-6 rounded-full bg-[#003566]" />
-            </div>
+          {/* Subtle bottom decoration */}
+          <motion.div variants={fadeIn} className="mt-16 flex justify-center">
+            <div className="w-16 h-1 bg-[#cb8547] opacity-40"></div>
           </motion.div>
         </motion.div>
       </div>

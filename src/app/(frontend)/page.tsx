@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic'
 import { getPayload } from 'payload'
 import React from 'react'
 import HeroBlock from '@/components/homepage/HeroBlock'
+import CardsHero from '@/components/homepage/CardsHero'
 import AboutUsSection from '@/components/homepage/LandingAbout'
 import ServicesCarouselSection from '@/components/homepage/Services'
 import TeamSection from '@/components/homepage/TeamBlock'
@@ -40,6 +41,8 @@ function renderBlock(block: any, index: number) {
   switch (block.blockType) {
     case 'hero':
       return <HeroBlock key={index} block={block} />
+    case 'hero-cards':
+      return <CardsHero key={index} block={block} />
     case 'home-about':
       return <AboutUsSection key={index} block={block} />
     case 'our-team':

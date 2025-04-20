@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import logoDark from 'public/logo.png'
-import logo from 'public/logo_3.png'
+import logoDark from 'public/white.png'
+import logo from 'public/main.png'
 
 export default function Icon() {
   return (
@@ -11,7 +11,7 @@ export default function Icon() {
         width={800}
         height={800}
         alt="lilalkichwenkadima logo"
-        className="dark:hidden"
+        className="dark:hidden "
       />
       <Image
         src={logoDark}

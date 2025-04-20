@@ -228,6 +228,18 @@ export interface Page {
             blockType: 'hero';
           }
         | {
+            cards?:
+              | {
+                  title: string;
+                  content: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'hero-cards';
+          }
+        | {
             heading: string;
             description: string;
             id?: string | null;
@@ -737,6 +749,19 @@ export interface PagesSelect<T extends boolean = true> {
               heading?: T;
               subheading?: T;
               hero_image?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'hero-cards'?:
+          | T
+          | {
+              cards?:
+                | T
+                | {
+                    title?: T;
+                    content?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };

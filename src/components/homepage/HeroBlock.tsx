@@ -176,22 +176,6 @@ export default function HeroBlock({ block }: HeroBlockProps) {
         animate={{ opacity: 0.4, rotate: 360 }}
         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
       />
-
-      {/* Bottom accent bar */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#f0f1f0] z-20">
-        <motion.div
-          className="h-full bg-[#cb8547]"
-          animate={{
-            x: ['-100%', '100%'],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            repeatType: 'loop',
-            ease: 'easeInOut',
-          }}
-        />
-      </div>
     </section>
   )
 }

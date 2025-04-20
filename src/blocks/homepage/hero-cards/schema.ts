@@ -1,27 +1,15 @@
 import { Block } from 'payload'
 
-export const WhyChooseUs: Block = {
-  slug: 'why-choose-us', // Unique identifier for the block
+export const HeroCards: Block = {
+  slug: 'hero-cards', // Unique identifier for the block
   admin: { group: 'Home Page' },
   fields: [
     {
-      name: 'heading',
-      label: 'Heading',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'description',
-      label: 'Description',
-      type: 'textarea',
-      required: true,
-    },
-    {
-      name: 'listings',
-      label: 'Choose Us Listings',
+      name: 'cards',
+      label: 'Hero Section Cards',
       type: 'array',
       minRows: 1,
-      maxRows: 10,
+      maxRows: 2,
       fields: [
         {
           name: 'title',

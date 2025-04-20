@@ -1,95 +1,166 @@
 'use client'
-import React, { useState } from 'react'
-import { MdOutlineMenuBook, MdOutlineSupportAgent } from 'react-icons/md'
-import { BsFillMenuButtonWideFill } from 'react-icons/bs'
-import { FaCertificate, FaMoneyCheck, FaSchool } from 'react-icons/fa6'
-import { TbBooks, TbListTree } from 'react-icons/tb'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { LiaSchoolSolid } from 'react-icons/lia'
-import { GiTalk } from 'react-icons/gi'
 import { useRouter } from 'next/navigation'
-
-import { PiStudentFill } from 'react-icons/pi'
-import { MdPayment } from 'react-icons/md'
+import { FiMenu } from 'react-icons/fi'
 import { IoClose } from 'react-icons/io5'
-
-// imports
 
 function Navbar() {
   const router = useRouter()
-  const [menuOpen, setMenuOpen] = useState(true)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  // Handle scroll effect for navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const handleNav = () => {
     setMenuOpen(!menuOpen)
   }
 
   return (
-    <nav className="fixed top-0 bg-white z-50 h-[2vh] md:h-[18vh] xl:h-[2vh] w-full flex justify-center items-center py-12 px-4 md:px-12">
-      <div className="container flex justify-between items-center">
-        {/* Branding Section */}
-        <div>
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-3' : 'bg-white/95 py-5'}`}
+    >
+      <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
+        {/* Logo */}
+        <div className="flex-shrink-0">
           <Link href="/">
             <Image
-              src="/logo_3.png"
-              width={150}
-              height={150}
+              src="/main.png"
+              width={130}
+              height={50}
               alt="Andego Gachagua Logo"
-              className="w-2/4 md:w-full xl:w-2/4"
+              className="w-24 md:w-32"
             />
           </Link>
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex">
-          <ul className="flex gap-8 2xl:gap-12 items-center text-black font-bold text-sm">
+        <div className="hidden md:block">
+          <ul className="flex space-x-8 items-center font-medium text-gray-700">
             <li>
-              <Link href="/">Home</Link>
+              <Link
+                href="/"
+                className="hover:text-black transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-black"
+              >
+                Home
+              </Link>
             </li>
             <li>
-              <Link href="/about">About</Link>
+              <Link
+                href="/about"
+                className="hover:text-black transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-black"
+              >
+                About
+              </Link>
             </li>
             <li>
-              <Link href="/team">Our Team</Link>
+              <Link
+                href="/team"
+                className="hover:text-black transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-black"
+              >
+                Our Team
+              </Link>
             </li>
             <li>
-              <Link href="/practice_areas">Practice Areas</Link>
+              <Link
+                href="/practice_areas"
+                className="hover:text-black transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-black"
+              >
+                Practice Areas
+              </Link>
             </li>
             <li>
-              <Link href="/contact">Contact Us</Link>
+              <Link
+                href="/contact"
+                className="hover:text-black transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-black"
+              >
+                Contact Us
+              </Link>
             </li>
           </ul>
         </div>
 
-        {/* Mobile Menu */}
-        <div
-          className={
-            menuOpen
-              ? 'collapse fixed w-0 h-[100%] left-4 top-[2000px] transition-all duration-700 ease-in-out md:hidden'
-              : 'fixed bg-white w-[100%] left-0 top-20 h-[90%] z-10 transition-all duration-700 ease-linear shadow-xl shadow-[#8a6445] md:hidden py-4'
-          }
+        {/* Book Appointment Button (Desktop) */}
+        <div className="hidden md:block">
+          <Link
+            href="/appointment"
+            className="bg-black text-white hover:bg-gray-800 font-medium px-6 py-2 rounded-md transition-colors duration-300 shadow-sm hover:shadow-md"
+          >
+            Book Appointment
+          </Link>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-gray-700 focus:outline-none"
+          onClick={handleNav}
+          aria-label="Toggle menu"
         >
-          <div className="flex flex-col gap-6">
-            <ul className="flex mt-6 px-4 justify-between">
-              <li>
-                <Link
-                  href="/appointment"
-                  onClick={handleNav}
-                  className="bg-black text-white border-2 border-[#f8d6b6] px-8 py-2 rounded-2xl"
-                >
-                  Book Appointment
-                </Link>
-              </li>
-            </ul>
-            <hr />
+          {menuOpen ? (
+            <IoClose size={26} className="text-gray-800" />
+          ) : (
+            <FiMenu size={26} className="text-gray-800" />
+          )}
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden transition-opacity duration-300 ${
+          menuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={handleNav}
+      />
+
+      {/* Mobile Menu Panel */}
+      <div
+        className={`fixed top-0 right-0 w-4/5 max-w-sm h-full bg-white z-50 md:hidden transition-transform duration-300 ease-in-out shadow-xl ${
+          menuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex justify-end p-4">
+          <button
+            onClick={handleNav}
+            className="text-gray-700 hover:text-black"
+            aria-label="Close menu"
+          >
+            <IoClose size={24} />
+          </button>
+        </div>
+
+        <div className="px-4 py-6">
+          {/* Mobile Logo */}
+          <div className="flex justify-center mb-8">
+            <Image
+              src="/main.png"
+              width={120}
+              height={40}
+              alt="Andego Gachagua Logo"
+              className="w-32"
+            />
           </div>
 
           {/* Mobile Navigation Links */}
-          <ul className="flex flex-col text-lg gap-y-14 mt-8 p-4 text-black font-semibold">
+          <ul className="space-y-4">
             <li>
               <Link
                 href="/"
-                className="bg-black hover:bg-gray-500 rounded block text-white py-2 px-3"
+                className="block w-full py-3 px-4 text-gray-800 hover:bg-gray-100 rounded-lg transition-colors duration-200"
                 onClick={handleNav}
               >
                 Home
@@ -98,7 +169,7 @@ function Navbar() {
             <li>
               <Link
                 href="/about"
-                className="hover:bg-gray-500 rounded block hover:text-white py-2 px-3"
+                className="block w-full py-3 px-4 text-gray-800 hover:bg-gray-100 rounded-lg transition-colors duration-200"
                 onClick={handleNav}
               >
                 About
@@ -107,7 +178,7 @@ function Navbar() {
             <li>
               <Link
                 href="/team"
-                className="hover:bg-gray-500 rounded block hover:text-white py-2 px-3"
+                className="block w-full py-3 px-4 text-gray-800 hover:bg-gray-100 rounded-lg transition-colors duration-200"
                 onClick={handleNav}
               >
                 Our Team
@@ -116,7 +187,7 @@ function Navbar() {
             <li>
               <Link
                 href="/practice_areas"
-                className="hover:bg-gray-500 rounded block hover:text-white py-2 px-3"
+                className="block w-full py-3 px-4 text-gray-800 hover:bg-gray-100 rounded-lg transition-colors duration-200"
                 onClick={handleNav}
               >
                 Practice Areas
@@ -125,46 +196,23 @@ function Navbar() {
             <li>
               <Link
                 href="/contact"
-                className="hover:bg-gray-500 rounded block hover:text-white py-2 px-3"
+                className="block w-full py-3 px-4 text-gray-800 hover:bg-gray-100 rounded-lg transition-colors duration-200"
                 onClick={handleNav}
               >
                 Contact Us
               </Link>
             </li>
           </ul>
-        </div>
 
-        {/* Right side of the Navbar */}
-        <div className="flex">
-          <div className="hidden md:flex gap-6 justify-center items-center font-semibold text-sm">
-            <>
-              <Link
-                href="/appointment"
-                className="bg-[#000000] hover:bg-[#facba0] rounded-2xl px-4 py-2 text-white"
-              >
-                Book Appointment
-              </Link>
-            </>
-          </div>
-
-          {/* Mobile Hamburger Menu Toggle */}
-          <div className="mobile-menu md:hidden" onClick={handleNav}>
-            <BsFillMenuButtonWideFill
-              size={30}
-              className={
-                menuOpen
-                  ? 'text-[#6d4019] cursor-pointer transition-all duration-700 ease-in-out'
-                  : 'hidden transition-all duration-700 ease-in-out'
-              }
-            />
-            <IoClose
-              size={30}
-              className={
-                !menuOpen
-                  ? 'text-[#6d4019] cursor-pointer transition-all duration-700 ease-in-out'
-                  : 'hidden transition-all duration-700 ease-in-out'
-              }
-            />
+          {/* Mobile Book Appointment Button */}
+          <div className="mt-8 px-4">
+            <Link
+              href="/appointment"
+              className="block w-full bg-black text-white text-center font-medium py-3 rounded-md hover:bg-gray-800 transition-colors duration-300"
+              onClick={handleNav}
+            >
+              Book Appointment
+            </Link>
           </div>
         </div>
       </div>
