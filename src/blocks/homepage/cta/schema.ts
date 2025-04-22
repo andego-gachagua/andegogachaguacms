@@ -16,5 +16,12 @@ export const CTA: Block = {
       type: 'textarea',
       required: true,
     },
+    {
+      name: 'backgroundImage',
+      label: 'Background Image',
+      type: 'upload',
+      relationTo: 'media',
+      required: true,
+    },
   ],
 }

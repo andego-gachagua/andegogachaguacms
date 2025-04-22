@@ -1,7 +1,8 @@
 'use client'
-import React from 'react'
-import { Building2, Users, Scale, Briefcase, CheckCircle, Shield } from 'lucide-react'
+import React, { useEffect } from 'react'
 import Image from 'next/image'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 interface AboutHeroBlockProps {
   block: {
@@ -11,150 +12,160 @@ interface AboutHeroBlockProps {
 }
 
 export default function AboutHero({ block }: AboutHeroBlockProps) {
-  // Main color: #003566 (deep navy blue)
-  // Secondary colors derived from the main color
-  const mainColor = '#003566'
-  const lightMainColor = '#e5edf5' // Light version for backgrounds
+  const mainColor = '#cb8547'
 
   const aboutContent =
     block.clause ||
     'At LilanKichwenKadima, we are a team of passionate legal professionals committed to achieving the best possible outcomes for our clients. Our firm was founded on the belief that effective legal representation is built on integrity, transparency, and a deep understanding of our clients needs. Over the years, we have expanded our services to cover a variety of practice areas, including family law, criminal defense, business law, estate planning, and more. We believe in providing personal, accessible legal support to individuals, families, and businesses alike. With decades of experience, we have earned a reputation for excellence in our community. We combine strategic legal expertise with a compassionate approach to ensure our clients feel supported and empowered throughout the legal process.'
 
-  // Split content into paragraphs for better readability
+  // Animation controls
+  const controls = useAnimation()
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    }
+  }, [controls, inView])
+
+  // Animation variants
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: 'easeOut' },
+    },
+  }
+
+  // Format paragraphs
   const paragraphs = aboutContent.split('. ').reduce((acc, sentence, index, array) => {
-    if (index % 2 === 0) {
-      const currentSentence = sentence + (index < array.length - 1 ? '.' : '')
-      const nextSentence = array[index + 1] ? array[index + 1] + '.' : ''
-      acc.push((currentSentence + ' ' + nextSentence).trim())
+    if (index % 3 === 0) {
+      const sentences = []
+      if (sentence) sentences.push(sentence + '.')
+      if (array[index + 1]) sentences.push(array[index + 1] + '.')
+      if (array[index + 2]) sentences.push(array[index + 2] + '.')
+      acc.push(sentences.join(' '))
     }
     return acc
   }, [] as string[])
 
   return (
-    <section className="bg-[#003566] py-16">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-2 md:order-1">
-            <div className="relative rounded-xl overflow-hidden shadow-lg">
-              <Image
-                src={block.photo?.url || '/bg.jpg'}
-                width={800}
-                height={600}
-                priority
-                alt="LilanKichwenKadima Law Firm"
-                className="w-full h-full aspect-4/3 object-cover object-top"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-
-              {/* New overlay element with firm name */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                <h3 className="text-white text-xl font-bold">LilanKichwenKadima</h3>
-                <p className="text-white/80 text-sm">Legal Excellence Since 1998</p>
+    <section ref={ref} className="py-20 md:py-28 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <motion.div
+          className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16"
+          variants={containerVariants}
+          initial="hidden"
+          animate={controls}
+        >
+          {/* Image Column with subtle animation */}
+          <motion.div className="w-full lg:w-1/2 relative" variants={itemVariants}>
+            <div className="relative rounded-lg overflow-hidden shadow-xl">
+              <div className="aspect-w-4 aspect-h-3">
+                <Image
+                  src={block.photo?.url || '/bg.jpg'}
+                  width={600}
+                  height={400}
+                  priority
+                  alt="LilanKichwenKadima Law Firm"
+                  className="object-cover transition-transform duration-700 hover:scale-105 "
+                />
               </div>
+
+              {/* Accent details */}
+              <div className="absolute top-0 left-0 w-20 h-20 border-t-4 border-l-4 border-white/30 rounded-tl-lg" />
+              <div className="absolute bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 border-white/30 rounded-br-lg" />
+
+              {/* Subtle overlay */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-black/25 to-transparent mix-blend-overlay" />
             </div>
 
-            {/* Values Icons - Updated colors */}
-            <div
-              className="bg-white shadow-md mt-6 p-6 rounded-lg border-t-4"
-              style={{ borderColor: mainColor }}
-            >
-              <h3 className="text-lg font-semibold mb-4" style={{ color: mainColor }}>
-                Our Values
-              </h3>
-              <div className="grid grid-cols-3 gap-4">
-                <div className="flex flex-col items-center text-center">
-                  <div
-                    className="p-3 rounded-full mb-2"
-                    style={{ backgroundColor: lightMainColor }}
-                  >
-                    <CheckCircle size={24} style={{ color: mainColor }} />
-                  </div>
-                  <span className="text-sm font-medium text-gray-700">Precision</span>
-                </div>
-                <div className="flex flex-col items-center text-center">
-                  <div
-                    className="p-3 rounded-full mb-2"
-                    style={{ backgroundColor: lightMainColor }}
-                  >
-                    <Scale size={24} style={{ color: mainColor }} />
-                  </div>
-                  <span className="text-sm font-medium text-gray-700">Integrity</span>
-                </div>
+            {/* Decorative element */}
+            <div className="absolute -bottom-4 -right-4 w-40 h-40 rounded-full border border-[#cb8547]/20 -z-10" />
+            <div className="absolute -top-4 -left-4 w-24 h-24 rounded-full border border-[#cb8547]/10 -z-10" />
+          </motion.div>
 
-                <div className="flex flex-col items-center text-center">
-                  <div
-                    className="p-3 rounded-full mb-2"
-                    style={{ backgroundColor: lightMainColor }}
-                  >
-                    <Shield size={24} style={{ color: mainColor }} />
-                  </div>
-                  <span className="text-sm font-medium text-gray-700">Fortitude</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Content Column - Updated styling */}
-          <div className="order-1 md:order-2">
+          {/* Content Column */}
+          <motion.div
+            className="w-full lg:w-1/2 flex flex-col justify-center"
+            variants={itemVariants}
+          >
+            {/* Heading with animated underline */}
             <div className="mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: mainColor }}>
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-gray-900 relative inline-block">
                 About Our Firm
+                <motion.div
+                  className="absolute -bottom-3 left-0 h-1 bg-[#cb8547]"
+                  initial={{ width: '0%' }}
+                  animate={inView ? { width: '100%' } : { width: '0%' }}
+                  transition={{ duration: 1, delay: 0.3 }}
+                />
               </h2>
-              <div className="w-20 h-1 mb-6" style={{ backgroundColor: mainColor }}></div>
-
-              <div
-                className="flex items-center mb-6 p-4 rounded-lg"
-                style={{ backgroundColor: lightMainColor }}
-              >
-                <div className="p-3 rounded-full mr-4" style={{ backgroundColor: 'white' }}>
-                  <Building2 size={24} style={{ color: mainColor }} />
-                </div>
-                <h3 className="text-xl font-semibold" style={{ color: mainColor }}>
-                  Lilan | Kichwen | Kadima
-                </h3>
-              </div>
             </div>
 
-            <div className="space-y-4 text-white/90">
+            {/* Content with staggered animation */}
+            <motion.div
+              className="space-y-5"
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    staggerChildren: 0.15,
+                  },
+                },
+              }}
+            >
               {paragraphs.map((paragraph, index) => (
-                <p key={index} className="leading-relaxed text-justify">
+                <motion.p
+                  key={index}
+                  variants={{
+                    hidden: { opacity: 0, y: 15 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.5, delay: 0.1 * index },
+                    },
+                  }}
+                  className="text-gray-700 leading-relaxed text-base md:text-lg"
+                >
                   {paragraph}
-                </p>
+                </motion.p>
               ))}
-            </div>
-            {/* Quick Facts - Updated styling */}
-            <div className="mt-8 grid grid-cols-2 gap-4">
-              <div
-                className="flex items-center p-4 rounded-lg shadow-sm"
-                style={{ backgroundColor: lightMainColor }}
+            </motion.div>
+
+            {/* Subtle signature element */}
+            <motion.div className="mt-10 flex items-center" variants={itemVariants}>
+              <div className="h-px bg-gradient-to-r from-[#cb8547] to-transparent flex-grow max-w-[120px]" />
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="mx-3 text-[#cb8547]"
               >
-                <div className="p-2 rounded-full mr-3 bg-white">
-                  <Briefcase size={20} style={{ color: mainColor }} />
-                </div>
-                <div>
-                  <p className="text-2xl font-bold" style={{ color: mainColor }}>
-                    40+
-                  </p>
-                  <p className="text-sm text-gray-600">Combined Years of Experience</p>
-                </div>
-              </div>
-              <div
-                className="flex items-center p-4 rounded-lg shadow-sm"
-                style={{ backgroundColor: lightMainColor }}
-              >
-                <div className="p-2 rounded-full mr-3 bg-white">
-                  <Users size={20} style={{ color: mainColor }} />
-                </div>
-                <div>
-                  <p className="text-2xl font-bold" style={{ color: mainColor }}>
-                    5,000+
-                  </p>
-                  <p className="text-sm text-gray-600">Clients Served</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                <path
+                  d="M12 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10zm-1-9.95V16l5-5-5-5v3.05C7.5 9.5 6 11.1 6 13c0 1.75 1.5 3.1 5 4v-4.95z"
+                  fill="currentColor"
+                  fillOpacity="0.5"
+                />
+              </svg>
+              <div className="h-px bg-gradient-to-l from-[#cb8547] to-transparent flex-grow max-w-[120px]" />
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )

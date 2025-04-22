@@ -262,6 +262,7 @@ export interface Page {
         | {
             title: string;
             description: string;
+            backgroundImage: number | Media;
             id?: string | null;
             blockName?: string | null;
             blockType: 'cta-section';
@@ -793,6 +794,7 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               title?: T;
               description?: T;
+              backgroundImage?: T;
               id?: T;
               blockName?: T;
             };
