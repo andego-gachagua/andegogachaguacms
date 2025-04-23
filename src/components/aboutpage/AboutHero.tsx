@@ -12,11 +12,7 @@ interface AboutHeroBlockProps {
 }
 
 export default function AboutHero({ block }: AboutHeroBlockProps) {
-  const mainColor = '#cb8547'
-
-  const aboutContent =
-    block.clause ||
-    'At LilanKichwenKadima, we are a team of passionate legal professionals committed to achieving the best possible outcomes for our clients. Our firm was founded on the belief that effective legal representation is built on integrity, transparency, and a deep understanding of our clients needs. Over the years, we have expanded our services to cover a variety of practice areas, including family law, criminal defense, business law, estate planning, and more. We believe in providing personal, accessible legal support to individuals, families, and businesses alike. With decades of experience, we have earned a reputation for excellence in our community. We combine strategic legal expertise with a compassionate approach to ensure our clients feel supported and empowered throughout the legal process.'
+  const aboutContent = block.clause
 
   // Animation controls
   const controls = useAnimation()
