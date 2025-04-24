@@ -2,7 +2,7 @@ import { Block } from 'payload'
 
 export const OurTeam: Block = {
   slug: 'our-team', // Unique identifier for the block
-  admin: { group: 'Home Page' },
+  admin: { group: 'Our Team Page' },
 
   fields: [
     {
