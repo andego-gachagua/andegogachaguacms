@@ -5,9 +5,7 @@ import React from 'react'
 
 import config from '@/payload.config'
 import AboutHero from '@/components/aboutpage/AboutHero'
-import GoalsSection from '@/components/aboutpage/Goals'
-import TeamSection from '@/components/homepage/TeamBlock'
-
+import WhyUsSection from '@/components/aboutpage/WhyUs'
 export default async function AboutPage() {
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
@@ -26,7 +24,7 @@ export default async function AboutPage() {
 
   // Render the page layout dynamically
   return (
-    <div className="py-8 md:py-20 xl:py-20 overflow-hidden relative bg-white">
+    <div className="">
       <div className="page">{page.layout?.map((block, index) => renderBlock(block, index))}</div>
     </div>
   )
@@ -37,10 +35,8 @@ function renderBlock(block: any, index: number) {
   switch (block.blockType) {
     case 'about':
       return <AboutHero key={index} block={block} />
-    case 'goals':
-      return <GoalsSection key={index} block={block} />
-    case 'our-team':
-      return <TeamSection key={index} block={block} />
+    case 'whyus':
+      return <WhyUsSection key={index} block={block} />
 
     default:
       return null

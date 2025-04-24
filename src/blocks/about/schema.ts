@@ -9,38 +9,57 @@ export const About: Block = {
   ],
 }
 
-export const Goals: Block = {
-  slug: 'goals',
+export const WhyUs: Block = {
+  slug: 'whyus',
   admin: { group: 'About Page' },
-  fields: [
-    { name: 'mission', type: 'textarea', required: true },
-    { name: 'vision', type: 'textarea', required: true },
-  ],
-}
-
-export const Values: Block = {
-  slug: 'core-values',
-  admin: { group: 'About Page' },
+  labels: {
+    singular: 'Why Us',
+    plural: 'Why Us',
+  },
   fields: [
     {
-      name: 'our_values',
-      label: 'Core Values',
-      type: 'array',
-      minRows: 1,
-      maxRows: 4,
+      name: 'heading',
+      label: 'Section Heading',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'description',
+      label: 'Description',
+      type: 'textarea',
+      required: true,
+    },
+
+    {
+      name: 'cases_closed',
+      type: 'group',
       fields: [
-        {
-          name: 'title',
-          label: 'Value Title',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'description',
-          label: 'Value Description',
-          type: 'textarea',
-          required: true,
-        },
+        { name: 'case', label: 'Section Heading', type: 'text', required: true },
+        { name: 'value', type: 'number', required: true },
+      ],
+    },
+    {
+      name: 'advocates',
+      type: 'group',
+      fields: [
+        { name: 'advocate', label: 'Section Heading', type: 'text', required: true },
+        { name: 'value', type: 'number', required: true },
+      ],
+    },
+    {
+      name: 'clients',
+      type: 'group',
+      fields: [
+        { name: 'client', label: 'Section Heading', type: 'text', required: true },
+        { name: 'value', type: 'number', required: true },
+      ],
+    },
+    {
+      name: 'successful_cases',
+      type: 'group',
+      fields: [
+        { name: 'cases', label: 'Section Heading', type: 'text', required: true },
+        { name: 'value', type: 'number', required: true },
       ],
     },
   ],

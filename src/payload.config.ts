@@ -48,6 +48,18 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URI || '',
     },
   }),
+  email: nodemailerAdapter({
+    defaultFromAddress: `${process.env.EMAIL_USER}`,
+    defaultFromName: 'LilanKichwenKadima',
+    transport: await nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    }),
+  }),
   sharp,
   plugins: [
     s3Storage({

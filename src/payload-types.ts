@@ -268,6 +268,35 @@ export interface Page {
             blockType: 'cta-section';
           }
         | {
+            heading: string;
+            description: string;
+            email: string;
+            /**
+             * Add multiple telephone numbers
+             */
+            tel?:
+              | {
+                  phone: string;
+                  id?: string | null;
+                }[]
+              | null;
+            offices?:
+              | {
+                  physicalAddress: string;
+                  id?: string | null;
+                }[]
+              | null;
+            sociallinks?: {
+              linkedin?: string | null;
+              twitter?: string | null;
+              facebook?: string | null;
+              instagram?: string | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contact';
+          }
+        | {
             clause: string;
             photo: number | Media;
             id?: string | null;
@@ -275,11 +304,27 @@ export interface Page {
             blockType: 'about';
           }
         | {
-            mission: string;
-            vision: string;
+            heading: string;
+            description: string;
+            cases_closed: {
+              case: string;
+              value: number;
+            };
+            advocates: {
+              advocate: string;
+              value: number;
+            };
+            clients: {
+              client: string;
+              value: number;
+            };
+            successful_cases: {
+              cases: string;
+              value: number;
+            };
             id?: string | null;
             blockName?: string | null;
-            blockType: 'goals';
+            blockType: 'whyus';
           }
         | {
             practiceAreas?: (number | PracticeArea)[] | null;
@@ -798,6 +843,35 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        contact?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              email?: T;
+              tel?:
+                | T
+                | {
+                    phone?: T;
+                    id?: T;
+                  };
+              offices?:
+                | T
+                | {
+                    physicalAddress?: T;
+                    id?: T;
+                  };
+              sociallinks?:
+                | T
+                | {
+                    linkedin?: T;
+                    twitter?: T;
+                    facebook?: T;
+                    instagram?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
         about?:
           | T
           | {
@@ -806,11 +880,35 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
-        goals?:
+        whyus?:
           | T
           | {
-              mission?: T;
-              vision?: T;
+              heading?: T;
+              description?: T;
+              cases_closed?:
+                | T
+                | {
+                    case?: T;
+                    value?: T;
+                  };
+              advocates?:
+                | T
+                | {
+                    advocate?: T;
+                    value?: T;
+                  };
+              clients?:
+                | T
+                | {
+                    client?: T;
+                    value?: T;
+                  };
+              successful_cases?:
+                | T
+                | {
+                    cases?: T;
+                    value?: T;
+                  };
               id?: T;
               blockName?: T;
             };

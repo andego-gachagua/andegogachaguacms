@@ -8,6 +8,7 @@ import AboutUsSection from '@/components/homepage/LandingAbout'
 import ServicesCarouselSection from '@/components/homepage/Services'
 import TeamSection from '@/components/homepage/TeamBlock'
 import CTABlock from '@/components/homepage/CTABlock'
+import ContactHome from '@/components/homepage/ContactSection'
 
 import config from '@/payload.config'
 import './globals.css'
@@ -51,6 +52,8 @@ function renderBlock(block: any, index: number) {
       return <ServicesCarouselSection key={index} block={block} />
     case 'cta-section':
       return <CTABlock key={index} block={block} />
+    case 'contact':
+      return <ContactHome key={index} block={block} />
     default:
       return null
   }

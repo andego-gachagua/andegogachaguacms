@@ -17,17 +17,56 @@ export const Contact: Block = {
       type: 'textarea',
       required: true,
     },
-    {
-      name: 'telephone',
-      label: 'Phone Number',
-      type: 'number',
-      required: true,
-    },
+
     {
       name: 'email',
       label: 'Email',
       type: 'text',
       required: true,
+    },
+    {
+      name: 'tel',
+      label: 'Telephone Numbers',
+      admin: {
+        description: 'Add multiple telephone numbers',
+      },
+      type: 'array',
+      minRows: 1,
+      maxRows: 2,
+      fields: [
+        {
+          name: 'phone',
+          label: 'Phone',
+          type: 'text',
+          required: true,
+        },
+      ],
+    },
+    {
+      name: 'offices',
+      label: 'Offices',
+      type: 'array',
+      minRows: 1,
+      maxRows: 4,
+      fields: [
+        {
+          name: 'physicalAddress',
+          label: 'Physical Address',
+          type: 'text',
+          required: true,
+        },
+      ],
+    },
+    {
+      name: 'sociallinks',
+      label: 'Social Profiles',
+      type: 'group',
+      fields: [
+        { name: 'linkedin', type: 'text' },
+        { name: 'twitter', type: 'text' },
+        { name: 'facebook', type: 'text' },
+        { name: 'instagram', type: 'text' },
+      ],
     },
   ],
 }

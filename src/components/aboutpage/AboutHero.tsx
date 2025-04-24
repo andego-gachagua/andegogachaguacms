@@ -59,7 +59,7 @@ export default function AboutHero({ block }: AboutHeroBlockProps) {
   }, [] as string[])
 
   return (
-    <section ref={ref} className="py-20 md:py-28 bg-white overflow-hidden">
+    <section ref={ref} className="mt-16 py-20 md:py-28 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16"

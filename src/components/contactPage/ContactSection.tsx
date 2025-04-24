@@ -90,8 +90,9 @@ export default function ContactForm() {
         ))}
 
         {errors.form && (
-          <div className="md:col-span-2">
-            <p className="text-sm text-red-600">{errors.form}</p>
+          <div className="bg-red-50 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded">
+            <p className="font-medium">Oops!</p>
+            <p>{errors.form}</p>
           </div>
         )}
 
@@ -99,7 +100,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={submitting}
-            className="px-8 py-3 bg-[#003566] hover:bg-[#00264d] text-white font-medium rounded-md shadow-sm transition duration-150 flex items-center justify-center w-full"
+            className="px-8 py-3 bg-[#cb8547] hover:bg-[#110d09] text-white font-medium rounded-md shadow-sm transition duration-150 flex items-center justify-center w-full"
           >
             {submitting ? (
               <>
@@ -141,10 +142,12 @@ export default function ContactForm() {
 
 function LoadingState() {
   return (
-    <div className="bg-[#003566] border border-green-200 rounded-2xl p-6 text-center flex flex-col items-center space-y-4 shadow-md">
-      <LoaderCircle className="w-10 h-10 text-white animate-spin" />
-      <h3 className="text-xl font-semibold text-white">Please Wait!</h3>
-      <p className="text-gray-50">We{"'"}re loading the contact form for you.</p>
+    <div className="flex flex-col items-center justify-center h-64 px-6 py-8">
+      <LoaderCircle className="w-12 h-12 text-[#cb8537] animate-spin mb-4" />
+      <h3 className="text-xl font-semibold text-gray-800 mb-2">Loading Form</h3>
+      <p className="text-gray-500 text-center">
+        Please wait while we prepare the contact form for you.
+      </p>
     </div>
   )
 }

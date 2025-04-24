@@ -4,8 +4,9 @@ import { LandingAbout } from '@/blocks/homepage/home-about/schema'
 import { ServicesBlock } from '@/blocks/homepage/services/schema'
 import { OurTeam } from '@/blocks/homepage/our-team/schema'
 import { CTA } from '@/blocks/homepage/cta/schema'
+import { Contact } from '@/blocks/homepage/contact-us/schema'
 import type { CollectionConfig } from 'payload'
-import { About, Goals } from '@/blocks/about/schema'
+import { About, WhyUs } from '@/blocks/about/schema'
 import { PracticeAreasBlock } from '@/blocks/practiceareas/schema'
 import { OfficeDetails } from '@/blocks/office/schema'
 
@@ -38,8 +39,9 @@ export const Pages: CollectionConfig = {
         ServicesBlock,
         OurTeam,
         CTA,
+        Contact,
         About,
-        Goals,
+        WhyUs,
         PracticeAreasBlock,
         OfficeDetails,
       ],
