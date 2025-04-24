@@ -78,7 +78,7 @@ function Navbar() {
             </li>
             <li>
               <Link
-                href="/practice_areas"
+                href="/practice-areas"
                 className="hover:text-black transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-black"
               >
                 Practice Areas
@@ -186,7 +186,7 @@ function Navbar() {
             </li>
             <li>
               <Link
-                href="/practice_areas"
+                href="/practice-areas"
                 className="block w-full py-3 px-4 text-gray-800 hover:bg-gray-100 rounded-lg transition-colors duration-200"
                 onClick={handleNav}
               >
