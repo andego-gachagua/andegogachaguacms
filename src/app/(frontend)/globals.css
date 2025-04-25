@@ -381,7 +381,7 @@ section {
 
 /* about */
 .about {
-  background: url('/andego/group.jpg'), linear-gradient(to right, #c5c490, #020101, #cb8547);
+  background: linear-gradient(to right, #c5c490, #020101, #cb8547);
   background-position: center;
   background-blend-mode: multiply;
   background-size: cover;
@@ -477,4 +477,302 @@ section {
     font-size: 14px;
     min-width: 180px;
   }
+}
+
+/* Base styling for rich text container */
+.richtext {
+  color: #333333;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.75;
+  max-width: 100%;
+}
+
+/* Headings */
+.richtext h1 {
+  font-size: clamp(1.875rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: #000000;
+  /* Changed to black */
+  margin: 1.5rem 0 1rem;
+  line-height: 1.2;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  /* Changed to black */
+  padding-bottom: 0.5rem;
+}
+
+.richtext h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 600;
+  color: #000000;
+  /* Changed to black */
+  margin: 1.5rem 0 1rem;
+  line-height: 1.3;
+}
+
+.richtext h3 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 600;
+  color: #000000;
+  /* Changed to black */
+  margin: 1.25rem 0 0.75rem;
+}
+
+.richtext h4 {
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  font-weight: 600;
+  color: #000000;
+  /* Changed to black */
+  margin: 1rem 0 0.75rem;
+}
+
+/* Paragraphs */
+.richtext p {
+  color: #1f2937;
+  /* Gray-900 */
+  margin-bottom: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.75;
+}
+
+/* Links */
+.richtext a {
+  color: #cb8547;
+  /* Changed to copper color */
+  text-decoration: none;
+  border-bottom: 1px solid rgba(203, 133, 71, 0.3);
+  /* Changed to copper color */
+  transition: all 0.2s ease;
+}
+
+.richtext a:hover {
+  color: #000000;
+  /* Changed to black */
+  border-bottom-color: #000000;
+  /* Changed to black */
+}
+
+/* Lists */
+.richtext ul,
+.richtext ol {
+  padding-left: 1.75rem;
+  margin: 1.25rem 0;
+}
+
+.richtext ul {
+  list-style-type: none;
+}
+
+.richtext ul li {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.richtext ul li::before {
+  content: "";
+  position: absolute;
+  left: -1.25rem;
+  top: 0.6rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #cb8547;
+  /* Changed to copper color */
+}
+
+.richtext ol {
+  list-style-type: decimal;
+  counter-reset: item;
+}
+
+.richtext ol li {
+  margin-bottom: 0.75rem;
+}
+
+/* Blockquotes */
+.richtext blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #cb8547;
+  /* Changed to copper color */
+  background-color: rgba(203, 133, 71, 0.05);
+  /* Changed to copper color */
+  font-style: italic;
+  color: #4a5568;
+}
+
+.richtext blockquote p {
+  margin-bottom: 0.5rem;
+}
+
+.richtext blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Code blocks */
+.richtext pre {
+  background-color: #f8f8f8;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border: 1px solid #e5e5e5;
+}
+
+.richtext code {
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+  padding: 0.2em 0.4em;
+  background-color: rgba(0, 0, 0, 0.05);
+  /* Changed to black */
+  border-radius: 0.25rem;
+}
+
+/* Tables */
+.richtext table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+}
+
+.richtext table th {
+  background-color: #000000;
+  /* Changed to black */
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem;
+}
+
+.richtext table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.richtext table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.03);
+  /* Changed to black */
+}
+
+/* Images */
+.richtext img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+  margin: 1.5rem 0;
+}
+
+/* Image captions */
+.richtext figure {
+  margin: 1.5rem 0;
+}
+
+.richtext figcaption {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Horizontal rule */
+.richtext hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, rgba(203, 133, 71, 0.1), rgba(203, 133, 71, 0.6), rgba(203, 133, 71, 0.1));
+  /* Changed to copper color */
+  margin: 2rem 0;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 640px) {
+  .richtext {
+    padding: 0 0.5rem;
+  }
+
+  .richtext blockquote {
+    padding: 0.75rem 1rem;
+  }
+
+  .richtext pre {
+    padding: 0.75rem;
+  }
+}
+
+/* Responsive video embeds */
+.richtext .video-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 1.5rem 0;
+}
+
+.richtext .video-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+}
+
+/* Additional styling for emphasis and strong */
+.richtext strong {
+  color: #000000;
+  /* Changed to black */
+  font-weight: 600;
+}
+
+.richtext em {
+  color: #4b5563;
+}
+
+/* Subtle accent for details and summary */
+.richtext details {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+}
+
+.richtext summary {
+  font-weight: 600;
+  cursor: pointer;
+  color: #000000;
+  /* Changed to black */
+  padding: 0.5rem 0;
+}
+
+.richtext details[open] summary {
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Enhanced styling for call-to-action areas */
+.richtext .cta-box {
+  background-color: rgba(203, 133, 71, 0.05);
+  /* Light copper background */
+  border: 1px solid rgba(203, 133, 71, 0.2);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.richtext .cta-box h3 {
+  color: #cb8547;
+  /* Copper color */
+  margin-top: 0;
+}
+
+/* Additional styling for aside content */
+.richtext aside {
+  background-color: #f9f9f9;
+  border-left: 3px solid #cb8547;
+  /* Copper color */
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 0.95em;
+  color: #4b5563;
 }

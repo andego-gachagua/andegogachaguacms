@@ -27,7 +27,7 @@ interface WhyblockProps {
 }
 
 export default function WhyUsSection({ block }: WhyblockProps) {
-  const mainColor = '#cb8547'
+  const mainColor = '#ffffff'
   const [isVisible, setIsVisible] = useState(false)
   const [counters, setCounters] = useState({
     cases: 0,
@@ -101,7 +101,10 @@ export default function WhyUsSection({ block }: WhyblockProps) {
   }, [isVisible, block])
 
   return (
-    <section id="why-us-section" className="py-20 bg-[#311d0c] text-white relative">
+    <section
+      id="why-us-section"
+      className="py-20 bg-gradient-to-br from-gray-900 to-black text-white relative"
+    >
       <div className="max-w-6xl mx-auto px-4 relative z-10 pt-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Mission Card */}
@@ -122,8 +125,7 @@ export default function WhyUsSection({ block }: WhyblockProps) {
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center px-6 py-3 rounded-md font-medium transition-all duration-300 hover:bg-opacity-90"
-                style={{ backgroundColor: mainColor }}
+                className="inline-flex items-center px-6 py-3 rounded-md font-medium transition-all duration-300 hover:bg-opacity-90 text-[#cb8547] bg-white shadow-md hover:shadow-lg"
               >
                 Schedule a Consultation
                 <ChevronRight size={18} className="ml-2" />

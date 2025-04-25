@@ -83,7 +83,7 @@ export default function ContactForm() {
 
   return (
     <div>
-      <h3 className="text-xl font-semibold text-[#003566] mb-6">Send Us a Message</h3>
+      <h3 className="text-xl font-semibold text-[#cb8547] mb-6">Send Us a Message</h3>
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {formData.fields.map((field: any) => (
           <FormField key={field.id} field={field} error={errors[field.name]} />

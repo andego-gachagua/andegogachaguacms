@@ -89,7 +89,7 @@ export default function PracticeHeroSection({ block }: ServicesBlockProps) {
   return (
     <section className="relative overflow-hidden py-20 md:py-24 lg:py-32 bg-white" ref={ref}>
       {/* Keep the header as it is */}
-      <div className="justify-center text-center p-12 about md:mt-10">
+      <div className="justify-center text-center p-12 bg-gradient-to-br from-gray-900 to-black md:mt-10">
         <div>
           <h2 className="text-white about_title">Practice Areas</h2>
         </div>
@@ -153,7 +153,7 @@ export default function PracticeHeroSection({ block }: ServicesBlockProps) {
           {practiceAreas.length > 0 ? (
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6"
             >
               {practiceAreas.map((area, index) => (
                 <motion.div

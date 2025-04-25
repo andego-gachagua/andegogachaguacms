@@ -86,7 +86,7 @@ export default function OurTeam({ block }: OurTeamBlockProps) {
 
   return (
     <section className="relative overflow-hidden bg-white">
-      <div className="justify-center text-center p-12 about md:mt-10">
+      <div className="justify-center text-center p-12 bg-gradient-to-br from-gray-900 to-black md:mt-10">
         <div>
           <h2 className="text-white about_title">Our Team</h2>
         </div>
@@ -128,7 +128,7 @@ export default function OurTeam({ block }: OurTeamBlockProps) {
                       d="m1 9 4-4-4-4"
                     />
                   </svg>
-                  <span className="ml-1 text-sm font-medium text-white md:ml-2">About</span>
+                  <span className="ml-1 text-sm font-medium text-white md:ml-2">Our Team</span>
                 </div>
               </li>
             </ol>
@@ -291,7 +291,7 @@ export default function OurTeam({ block }: OurTeamBlockProps) {
                     )}
                   </div>
 
-                  <div className="relative p-6 flex flex-col flex-grow bg-gradient-to-tl from-black via-black to-[#cb8547]">
+                  <div className="relative p-6 flex flex-col flex-grow bg-gradient-to-br from-gray-900 to-black">
                     {/* Name and role with elegant styling */}
                     <div className="mb-5">
                       <h3 className="text-2xl font-bold text-white mb-1">{attorney.name}</h3>

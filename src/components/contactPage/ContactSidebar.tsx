@@ -18,7 +18,7 @@ export default function ContactSidebar({ activeTab, setActiveTab }: ContactSideb
           onClick={() => setActiveTab('form')}
           className={`flex items-center px-4 py-3 font-medium text-sm transition ${
             activeTab === 'form'
-              ? 'text-[#003566] border-b-2 border-[#003566]'
+              ? 'text-[#cb8547] border-b-2 border-[#cb8547]'
               : 'text-gray-500 hover:text-gray-700'
           }`}
         >
@@ -29,7 +29,7 @@ export default function ContactSidebar({ activeTab, setActiveTab }: ContactSideb
           onClick={() => setActiveTab('newsletter')}
           className={`flex items-center px-4 py-3 font-medium text-sm transition ${
             activeTab === 'newsletter'
-              ? 'text-[#003566] border-b-2 border-[#003566]'
+              ? 'text-[#cb8547] border-b-2 border-[#cb8547]'
               : 'text-gray-500 hover:text-gray-700'
           }`}
         >
@@ -47,54 +47,54 @@ function ContactInfo() {
   return (
     <div className="space-y-8">
       <div>
-        <h3 className="text-xl font-semibold text-[#003566] mb-4">Get in Touch</h3>
+        <h3 className="text-xl font-semibold text-[#cb8547] mb-4">Get in Touch</h3>
         <p className="text-gray-600 mb-6">
           Have questions or need assistance? Our team is ready to help you with any inquiries.
         </p>
       </div>
 
       <div className="flex flex-col space-y-8">
-        <Link href="mailto:info@lilankichwenkadima.com">
+        <Link href="mailto:info@andegogachagua.com">
           <div className="flex items-start cursor-pointer">
-            <div className="flex-shrink-0 bg-[#003566] rounded-full p-2 mr-4">
+            <div className="flex-shrink-0 bg-[#cb8547] rounded-full p-2 mr-4">
               <Mail className="w-5 h-5 text-white" />
             </div>
             <div>
               <h4 className="font-medium text-gray-900">Email Us</h4>
-              <p className="text-gray-600">info@lilankichwenkadima.com</p>
+              <p className="text-gray-600">info@andegogachagua.com</p>
             </div>
           </div>
         </Link>
 
-        <Link href="tel:+254790039031">
+        <Link href="tel:+254759803001">
           <div className="flex items-start cursor-pointer">
-            <div className="flex-shrink-0 bg-[#003566] rounded-full p-2 mr-4">
+            <div className="flex-shrink-0 bg-[#cb8547] rounded-full p-2 mr-4">
               <Phone className="w-5 h-5 text-white" />
             </div>
             <div>
               <h4 className="font-medium text-gray-900">Call Us</h4>
-              <p className="text-gray-600">+254 790 039031</p>
+              <p className="text-gray-600">+254 759 803001</p>
             </div>
           </div>
         </Link>
 
-        <Link href="https://wa.me/254790039031" target="_blank" rel="noopener noreferrer">
+        <Link href="tel:+254704208484">
           <div className="flex items-start cursor-pointer">
-            <div className="flex-shrink-0 bg-[#003566] rounded-full p-2 mr-4">
-              <IoLogoWhatsapp className="w-5 h-5 text-white" />
+            <div className="flex-shrink-0 bg-[#cb8547] rounded-full p-2 mr-4">
+              <Phone className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h4 className="font-medium text-gray-900">WhatsApp</h4>
-              <p className="text-gray-600">+254 790 039031</p>
+              <h4 className="font-medium text-gray-900">Call Us</h4>
+              <p className="text-gray-600">+254 704 208484</p>
             </div>
           </div>
         </Link>
       </div>
 
-      <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+      <div className="bg-[#f0f1f0] p-4 rounded-lg border border-blue-100">
         <div className="flex">
-          <AlertCircle className="w-5 h-5 text-blue-600 mr-2 flex-shrink-0" />
-          <p className="text-sm text-blue-800">
+          <AlertCircle className="w-5 h-5 text-[#cb8547] mr-2 flex-shrink-0" />
+          <p className="text-sm text-[#cb8547]">
             We typically respond to all inquiries within 24 business hours.
           </p>
         </div>
@@ -187,7 +187,7 @@ function NewsletterSignup() {
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="text-xl font-semibold text-[#003566] mb-4">Stay Connected</h3>
+        <h3 className="text-xl font-semibold text-[#cb8547] mb-4">Stay Connected</h3>
         <p className="text-gray-600">
           Subscribe to our newsletter for legal insights, updates on recent cases, and helpful
           resources.
@@ -211,7 +211,7 @@ function NewsletterSignup() {
               onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="your@email.com"
-              className="block w-full pl-10 px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#003566] focus:border-transparent transition duration-150"
+              className="block w-full pl-10 px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#cb8547] focus:border-transparent transition duration-150"
             />
           </div>
           {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
@@ -224,7 +224,7 @@ function NewsletterSignup() {
               name="terms"
               type="checkbox"
               required
-              className="focus:ring-[#003566] h-4 w-4 text-[#003566] border-gray-300 rounded"
+              className="focus:ring-[#cb8547] h-4 w-4 text-[#cb8547] border-gray-300 rounded"
             />
           </div>
           <div className="ml-3 text-sm">
@@ -237,7 +237,7 @@ function NewsletterSignup() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full px-8 py-3 bg-[#003566] hover:bg-[#00264d] text-white font-medium rounded-md shadow-sm transition duration-150 flex items-center justify-center"
+          className="w-full px-8 py-3 bg-[#cb8547] hover:bg-[#cb8547]/70 text-white font-medium rounded-md shadow-sm transition duration-150 flex items-center justify-center cursor-pointer"
         >
           {loading ? (
             <>
@@ -278,7 +278,7 @@ function NewsletterSignup() {
         <ul className="space-y-2 text-sm text-gray-600">
           <li className="flex items-start">
             <svg
-              className="w-4 h-4 text-[#003566] mr-2 mt-1"
+              className="w-4 h-4 text-[#cb8547] mr-2 mt-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -294,7 +294,7 @@ function NewsletterSignup() {
           </li>
           <li className="flex items-start">
             <svg
-              className="w-4 h-4 text-[#003566] mr-2 mt-1"
+              className="w-4 h-4 text-[#cb8547] mr-2 mt-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -310,7 +310,7 @@ function NewsletterSignup() {
           </li>
           <li className="flex items-start">
             <svg
-              className="w-4 h-4 text-[#003566] mr-2 mt-1"
+              className="w-4 h-4 text-[#cb8547] mr-2 mt-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

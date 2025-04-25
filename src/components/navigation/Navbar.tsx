@@ -86,10 +86,10 @@ function Navbar() {
             </li>
             <li>
               <Link
-                href="/contact"
+                href="/blog"
                 className="hover:text-black transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-black"
               >
-                Contact Us
+                Blog
               </Link>
             </li>
           </ul>
@@ -98,10 +98,10 @@ function Navbar() {
         {/* Book Appointment Button (Desktop) */}
         <div className="hidden md:block">
           <Link
-            href="/appointment"
-            className="bg-black text-white hover:bg-gray-800 font-medium px-6 py-2 rounded-md transition-colors duration-300 shadow-sm hover:shadow-md"
+            href="/contact"
+            className="bg-gradient-to-br from-gray-900 to-black text-white hover:bg-gray-800 font-medium px-6 py-2 rounded-md transition-colors duration-300 shadow-sm hover:shadow-md"
           >
-            Book Appointment
+            Contact Us
           </Link>
         </div>
 
@@ -195,11 +195,11 @@ function Navbar() {
             </li>
             <li>
               <Link
-                href="/contact"
+                href="/blog"
                 className="block w-full py-3 px-4 text-gray-800 hover:bg-gray-100 rounded-lg transition-colors duration-200"
                 onClick={handleNav}
               >
-                Contact Us
+                Blog{' '}
               </Link>
             </li>
           </ul>
@@ -207,11 +207,11 @@ function Navbar() {
           {/* Mobile Book Appointment Button */}
           <div className="mt-8 px-4">
             <Link
-              href="/appointment"
+              href="/contact"
               className="block w-full bg-black text-white text-center font-medium py-3 rounded-md hover:bg-gray-800 transition-colors duration-300"
               onClick={handleNav}
             >
-              Book Appointment
+              Contact Us{' '}
             </Link>
           </div>
         </div>

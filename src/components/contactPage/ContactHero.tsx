@@ -1,21 +1,56 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function ContactHero() {
   return (
-    <section className="bg-[#003566] relative overflow-hidden pt-12 flex justify-center items-center">
-      {/* Abstract decorative elements */}
-      <div className="absolute top-0 right-0 w-48 h-48 bg-white opacity-5 rounded-bl-full"></div>
-      <div className="absolute bottom-0 left-0 w-32 h-32 bg-white opacity-5 rounded-tr-full"></div>
-      <div className="absolute top-1/4 left-1/4 w-12 h-12 bg-white opacity-5 rounded-full"></div>
-      <div className="absolute bottom-1/3 right-1/3 w-16 h-16 bg-white opacity-5 rounded-full"></div>
+    <section className="relative overflow-hidden py-20 md:py-24 lg:py-32 bg-white">
+      <div className="justify-center text-center p-12 bg-gradient-to-br from-gray-900 to-black md:mt-10">
+        <div>
+          <h2 className="text-white about_title">Contact Us</h2>
+        </div>
+        <div className="flex justify-center text-center">
+          <nav className="flex" aria-label="Breadcrumb">
+            <ol className="inline-flex items-center space-x-1 md:space-x-3">
+              <li className="inline-flex items-center">
+                <Link
+                  href="/"
+                  className="inline-flex items-center text-sm font-medium hover:no-underline text-gray-400 dark:hover:color-andego"
+                >
+                  <svg
+                    className="w-3 h-3 mr-2.5"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
+                  </svg>
+                  Home
+                </Link>
+              </li>
 
-      <div className="container mx-auto px-6 py-12 md:py-16 relative z-10">
-        <div className="max-w-4xl mx-auto text-center mb-8">
-          <h1 className="text-2xl md:text-3xl font-bold text-white mb-3">Contact Us</h1>
-          <p className="text-blue-100 text-base md:text-lg max-w-2xl mx-auto">
-            Our team of experienced attorneys is ready to provide you with the legal expertise and
-            personalized service you deserve. Reach out to us today.
-          </p>
+              <li aria-current="page">
+                <div className="flex items-center">
+                  <svg
+                    className="w-3 h-3 text-gray-400 mx-1"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 6 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="m1 9 4-4-4-4"
+                    />
+                  </svg>
+                  <span className="ml-1 text-sm font-medium text-white md:ml-2">Contact</span>
+                </div>
+              </li>
+            </ol>
+          </nav>
         </div>
       </div>
     </section>

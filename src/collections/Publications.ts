@@ -5,8 +5,8 @@ import slugify from 'slugify'
 const Publications: CollectionConfig = {
   slug: 'publications',
   labels: {
-    singular: 'Publication Post',
-    plural: 'Publication Posts',
+    singular: 'Blog Post',
+    plural: 'Blog Posts',
   },
   admin: {
     useAsTitle: 'title',
@@ -67,6 +67,7 @@ const Publications: CollectionConfig = {
     {
       name: 'tags',
       type: 'array',
+      hidden: true,
       fields: [
         {
           name: 'tag',
