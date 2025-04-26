@@ -61,7 +61,7 @@ export default function AboutHero({ block }: AboutHeroBlockProps) {
 
   return (
     <section ref={ref} className="bg-white overflow-hidden">
-      <div className="justify-center text-center p-12 bg-gradient-to-br from-gray-900 to-black md:mt-10">
+      <div className="justify-center text-center p-12 bg-gradient-to-br from-gray-900 to-black mt-6 md:mt-10">
         <div>
           <h2 className="text-white about_title">About Us</h2>
         </div>

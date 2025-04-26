@@ -4,7 +4,7 @@ import React from 'react'
 export default function ContactHero() {
   return (
     <section className="relative overflow-hidden py-20 md:py-24 lg:py-32 bg-white">
-      <div className="justify-center text-center p-12 bg-gradient-to-br from-gray-900 to-black md:mt-10">
+      <div className="justify-center text-center p-12 bg-gradient-to-br from-gray-900 to-black mt-6 md:mt-10">
         <div>
           <h2 className="text-white about_title">Contact Us</h2>
         </div>

@@ -21,7 +21,7 @@ export default async function PublicationsPage({ searchParams }: Props) {
     <>
       <PublicationHero />
       <section className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
           {posts.map((post) => (
             <PublicationCard key={post.id} post={post} />
           ))}

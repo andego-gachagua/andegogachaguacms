@@ -86,7 +86,7 @@ export default function OurTeam({ block }: OurTeamBlockProps) {
 
   return (
     <section className="relative overflow-hidden bg-white">
-      <div className="justify-center text-center p-12 bg-gradient-to-br from-gray-900 to-black md:mt-10">
+      <div className="justify-center text-center p-12 bg-gradient-to-br from-gray-900 to-black mt-6 md:mt-10">
         <div>
           <h2 className="text-white about_title">Our Team</h2>
         </div>
@@ -135,7 +135,7 @@ export default function OurTeam({ block }: OurTeamBlockProps) {
           </nav>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 py-8 md:py-20">
         {/* Search & Filter Bar */}
         <div
           className="mb-10 flex flex-col sm:flex-row gap-4 items-center justify-between 

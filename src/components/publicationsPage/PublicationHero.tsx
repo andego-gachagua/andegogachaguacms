@@ -4,7 +4,7 @@ import React from 'react'
 export default function PublicationHero() {
   return (
     <section>
-      <div className=" flex flex-col justify-center text-center p-12 bg-gradient-to-br from-gray-900 to-black md:mt-10">
+      <div className=" flex flex-col justify-center text-center p-12 bg-gradient-to-br from-gray-900 to-black mt-6 md:mt-10">
         <div>
           <h2 className="text-white about_title">Blog</h2>
         </div>

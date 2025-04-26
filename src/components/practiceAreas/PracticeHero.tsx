@@ -89,7 +89,7 @@ export default function PracticeHeroSection({ block }: ServicesBlockProps) {
   return (
     <section className="relative overflow-hidden py-20 md:py-24 lg:py-32 bg-white" ref={ref}>
       {/* Keep the header as it is */}
-      <div className="justify-center text-center p-12 bg-gradient-to-br from-gray-900 to-black md:mt-10">
+      <div className="justify-center text-center p-12 bg-gradient-to-br from-gray-900 to-black mt-6 md:mt-10">
         <div>
           <h2 className="text-white about_title">Practice Areas</h2>
         </div>
@@ -260,7 +260,7 @@ export default function PracticeHeroSection({ block }: ServicesBlockProps) {
               <div className="p-6 border-t border-gray-200 flex justify-end">
                 <button
                   onClick={closeModal}
-                  className="px-6 py-3 rounded-lg font-medium transition-all bg-[#cb8547] bg-opacity-15 text-[#cb8547] border border-[#cb8547] hover:bg-[#cb8547] hover:text-black"
+                  className="px-6 py-3 rounded-lg font-medium transition-all bg-[#cb8547] bg-opacity-15 text-white border border-[#cb8547] hover:bg-[#cb8547] hover:text-black"
                 >
                   Close
                 </button>

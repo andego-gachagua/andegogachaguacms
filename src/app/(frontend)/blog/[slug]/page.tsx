@@ -48,7 +48,7 @@ export default async function PublicationPage({ params }: { params: Promise<{ sl
   return (
     <div className="bg-gradient-to-b from-white to-gray-50 min-h-screen">
       {/* Cover Image with Parallax Effect */}
-      <div className="relative h-[26vh] md:h-[60vh] overflow-hidden">
+      <div className="relative h-[30vh] md:h-[60vh] overflow-hidden">
         {post.coverImage ? (
           <div className="absolute inset-0 transform scale-105">
             <Image
@@ -72,9 +72,9 @@ export default async function PublicationPage({ params }: { params: Promise<{ sl
       </div>
 
       {/* Article Container */}
-      <div className="container mx-auto px-6 relative">
+      <div className="container mx-auto px-6 pb-12 relative">
         {/* Article Card */}
-        <div className="bg-white rounded-2xl shadow-xl -mt-32 lg:-mt-36 overflow-hidden relative z-10">
+        <div className="bg-white rounded-2xl shadow-xl -mt-24 lg:-mt-36 overflow-hidden relative z-10">
           {/* Title Area */}
           <div className="p-6 md:p-10 lg:p-12 pb-6">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
