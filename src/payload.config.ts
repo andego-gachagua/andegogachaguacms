@@ -50,7 +50,7 @@ export default buildConfig({
   }),
   email: nodemailerAdapter({
     defaultFromAddress: `${process.env.EMAIL_USER}`,
-    defaultFromName: 'LilanKichwenKadima',
+    defaultFromName: 'Andego Gachagua Advocates LLP',
     transport: await nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),
@@ -89,7 +89,7 @@ export default buildConfig({
         message: true,
       },
       redirectRelationships: ['pages'],
-      defaultToEmail: 'email.developer.backend@gmail.com',
+      defaultToEmail: 'andegogachaguaadvocatesllp@gmail.com',
       formOverrides: {
         admin: {
           group: 'Forms',
