@@ -6,9 +6,8 @@ const nextConfig = {
   images: {
     domains: [
       'localhost',
-      'andegogachaguacms.vercel.app',
-      'andegogachaguacms-production.up.railway.app',
-      'andegogachagua.com',
+      'www.andegogachaguacms-production.up.railway.app',
+      'www.andegogachagua.com',
     ],
   },
 }
