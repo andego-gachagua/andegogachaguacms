@@ -298,30 +298,10 @@ const Footer = () => {
 
         {/* Bottom section - copyright and links */}
         <div className="pt-8 border-t border-gray-300">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex justify-center items-center">
             <p className="text-gray-600 text-sm mb-4 md:mb-0">
               &copy; {new Date().getFullYear()} Andego Gachagua Advocates LLP. All rights reserved.
             </p>
-            <div className="flex flex-wrap justify-center gap-6">
-              <Link
-                href="/privacy-policy"
-                className="text-gray-600 hover:text-[#cb8547] text-sm transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="text-gray-600 hover:text-[#cb8547] text-sm transition-colors"
-              >
-                Terms of Service
-              </Link>
-              <Link
-                href="/sitemap"
-                className="text-gray-600 hover:text-[#cb8547] text-sm transition-colors"
-              >
-                Sitemap
-              </Link>
-            </div>
           </div>
         </div>
       </div>
