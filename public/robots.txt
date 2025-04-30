@@ -1,0 +1,20 @@
+# *
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /contact
+Allow: /practice-areas
+Allow: /blog
+Allow: /our-team
+
+# *
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /__next/
+
+# Host
+Host: https://www.andegogachagua.com
+
+# Sitemaps
+Sitemap: https://www.andegogachagua.com/sitemap.xml

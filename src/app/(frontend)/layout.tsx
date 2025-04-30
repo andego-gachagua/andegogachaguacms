@@ -6,7 +6,26 @@ import Footer from '@/components/navigation/Footer'
 export const metadata = {
   title: 'Andego Gachagua Advocates LLP',
   description:
-    "We firmly believe in doing our work well, guided by a keen sense of professional integrity, trust and commercial awareness. This means that we apply our best efforts to provide excellent advice, to protect our clients' interests and to do that in a timely manner that does not affect other facets of our clients' personal/business affairs. After all, we understand that the legal aspect is but one of several other aspects you need to consider.",
+    'At Andego Gachagua Advocates LLP, we provide strategic, ethical, and results-driven legal services across diverse practice areas. Our client-centered approach empowers individuals and businesses with trusted guidance and clarity.',
+  metadataBase: new URL(`${process.env.NEXT_PUBLIC_SITE_URL}`),
+  openGraph: {
+    title: 'Andego Gachagua Advocates LLP - Strategic, Ethical, and Client-Focused Legal Solutions',
+    description:
+      'Discover how Andego Gachagua Advocates LLP delivers trusted, strategic, and client-centric legal solutions. Championing your rights with precision, integrity, and excellence.',
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}`,
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Andego Gachagua Advocates LLP',
+      },
+    ],
+    type: 'website',
+  },
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}`,
+  },
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
