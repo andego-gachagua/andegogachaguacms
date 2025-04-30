@@ -44,7 +44,7 @@ export default async function TeamDescription({ params }: { params: Promise<{ sl
   const mainColor = '#cb8547'
 
   return (
-    <section className="py-20 md:py-24 lg:py-32 relative overflow-hidden bg-white">
+    <section className="py-20 md:py-24 lg:py-32 mt-20 relative overflow-hidden bg-white">
       {/* Top accent element */}
       <div className="absolute top-0 left-0 w-full h-32 overflow-hidden z-0">
         <div
