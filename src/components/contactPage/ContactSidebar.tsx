@@ -66,14 +66,14 @@ function ContactInfo() {
           </div>
         </Link>
 
-        <Link href="tel:+254759803001">
+        <Link href="tel:+254728547650">
           <div className="flex items-start cursor-pointer">
             <div className="flex-shrink-0 bg-[#cb8547] rounded-full p-2 mr-4">
               <Phone className="w-5 h-5 text-white" />
             </div>
             <div>
               <h4 className="font-medium text-gray-900">Call Us</h4>
-              <p className="text-gray-600">+254 759 803001</p>
+              <p className="text-gray-600">+254 728 547650</p>
             </div>
           </div>
         </Link>
