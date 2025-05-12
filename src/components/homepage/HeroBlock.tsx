@@ -136,7 +136,7 @@ export default function HeroBlock({ block }: HeroBlockProps) {
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
               <Link
-                href="/contact-us"
+                href="/contact"
                 className="bg-[#cb8547] hover:bg-[#cb8547]/90 text-black px-6 sm:px-8 py-3 sm:py-4 text-base font-medium rounded-md shadow-lg flex items-center justify-center group transition-all duration-300 w-full"
               >
                 Contact us today

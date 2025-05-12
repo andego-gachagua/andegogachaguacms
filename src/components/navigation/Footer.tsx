@@ -135,10 +135,10 @@ const Footer = () => {
                 </svg>
                 <div>
                   <Link
-                    href="tel:+254759803001"
+                    href="tel:+254728547650"
                     className="text-gray-700 hover:text-[#cb8547] transition-colors"
                   >
-                    +254 759 803001
+                    +254 728 547650
                   </Link>
                   <br />
                   <Link

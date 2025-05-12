@@ -308,8 +308,8 @@ export default async function TeamDescription({ params }: { params: Promise<{ sl
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Biography</h2>
 
               {team_member.bio ? (
-                <div className="prose max-w-none text-gray-700">
-                  <RichText data={team_member.bio} />
+                <div className="max-w-none text-gray-700 text-justify tracking-wide">
+                  <RichText data={team_member.bio} className="" />
                 </div>
               ) : (
                 <p className="text-gray-500 italic">No biography available.</p>
