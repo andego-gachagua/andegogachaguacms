@@ -14,7 +14,7 @@ Disallow: /api/
 Disallow: /__next/
 
 # Host
-Host: https://andegogachaguacms-production.up.railway.app
+Host: https://www.andegogachagua.com
 
 # Sitemaps
-Sitemap: https://andegogachaguacms-production.up.railway.app/sitemap.xml
+Sitemap: https://www.andegogachagua.com/sitemap.xml
