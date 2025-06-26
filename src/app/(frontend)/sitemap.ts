@@ -39,38 +39,38 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     {
-      url: 'https://www.andegogachagua.com',
+      url: 'https://andegogachaguacms-production.up.railway.app',
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1.0,
     },
     {
-      url: 'https://www.andegogachagua.com/about',
+      url: 'https://andegogachaguacms-production.up.railway.app/about',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://www.andegogachagua.com/blog',
+      url: 'https://andegogachaguacms-production.up.railway.app/blog',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.6,
     },
     {
-      url: 'https://www.andegogachagua.com/our-team',
+      url: 'https://andegogachaguacms-production.up.railway.app/our-team',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.6,
     },
     {
-      url: 'https://www.andegogachagua.com/practice-areas',
+      url: 'https://andegogachaguacms-production.up.railway.app/practice-areas',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.6,
     },
 
     {
-      url: 'https://www.andegogachagua.com/contact',
+      url: 'https://andegogachaguacms-production.up.railway.app/contact',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.6,

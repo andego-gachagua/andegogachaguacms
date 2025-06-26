@@ -7,7 +7,7 @@ const nextConfig = {
     domains: [
       'localhost',
       'www.andegogachaguacms-production.up.railway.app',
-      'www.andegogachagua.com',
+      'andegogachaguacms-production.up.railway.app',
     ],
   },
 }
