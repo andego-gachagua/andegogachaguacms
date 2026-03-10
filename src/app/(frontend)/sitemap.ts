@@ -2,11 +2,11 @@ import type { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [teamRes, postsRes, areaRes] = await Promise.all([
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/team`),
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/publications`, {
+    fetch(`${process.env.NEXT_RAILWAY_URL}/team`),
+    fetch(`${process.env.NEXT_RAILWAY_URL}/publications`, {
       next: { revalidate: 3600 },
     }),
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/practice-areas`),
+    fetch(`${process.env.NEXT_RAILWAY_URL}/practice-areas`),
   ]);
 
   if (!teamRes.ok || !postsRes.ok || !areaRes.ok) {
