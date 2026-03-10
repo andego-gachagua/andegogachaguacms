@@ -103,11 +103,10 @@ export default function TeamSection({ block }: OurTeamProps) {
         <motion.div
           initial="hidden"
           animate={controls}
-          variants={staggerContainer}
           className="max-w-full mx-auto"
         >
           {/* Carousel section with edge navigation */}
-          <motion.div variants={fadeInUp} className="relative w-full">
+          <motion.div className="relative w-full">
             <Carousel setApi={setApi} className="w-full">
               <CarouselContent className="w-full">
                 {attorneys.map((attorney) => (

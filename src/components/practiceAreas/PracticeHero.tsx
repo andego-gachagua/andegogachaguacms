@@ -146,13 +146,11 @@ export default function PracticeHeroSection({ block }: ServicesBlockProps) {
         <motion.div
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          variants={containerVariants}
           className="space-y-8"
         >
           {/* Practice Areas Section */}
           {practiceAreas.length > 0 ? (
             <motion.div
-              variants={itemVariants}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6"
             >
               {practiceAreas.map((area, index) => (
@@ -221,12 +219,10 @@ export default function PracticeHeroSection({ block }: ServicesBlockProps) {
             initial="hidden"
             animate="visible"
             exit="exit"
-            variants={backdropVariants}
             className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
             onClick={closeModal}
           >
             <motion.div
-              variants={modalVariants}
               className="bg-white rounded-2xl overflow-hidden max-w-3xl w-full max-h-[85vh] relative"
               onClick={(e) => e.stopPropagation()}
             >

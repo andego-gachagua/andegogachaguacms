@@ -78,19 +78,13 @@ export default function HeroBlock({ block }: HeroBlockProps) {
         <motion.div
           initial="hidden"
           animate={controls}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
-          }}
+        
           className="w-full"
         >
           {/* Elegant badge */}
           <motion.div
             className="inline-block mb-8 px-5 py-2 rounded-full bg-black/40 backdrop-blur-sm border border-[#cb8547]"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-            }}
+        
           >
             <span className="text-[#cb8547] text-sm font-medium tracking-wider">
               ANDEGO GACHAGUA ADVOCATES
@@ -99,19 +93,13 @@ export default function HeroBlock({ block }: HeroBlockProps) {
 
           <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white leading-tight max-w-4xl mx-auto"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
-            }}
+          
           >
             {heading}
           </motion.h1>
 
           <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
-            }}
+          
           >
             <p className="text-lg md:text-xl mb-10 text-[#f0f1f0]/90 max-w-2xl mx-auto leading-relaxed">
               {subheading}
@@ -121,18 +109,12 @@ export default function HeroBlock({ block }: HeroBlockProps) {
           {/* Centered golden divider */}
           <motion.div
             className="h-1 w-24 bg-[#cb8547] mx-auto my-8"
-            variants={{
-              hidden: { width: 0, opacity: 0 },
-              visible: { width: 96, opacity: 1, transition: { duration: 0.8 } },
-            }}
+          
           />
 
           <motion.div
             className="flex flex-col sm:flex-row gap-5 mt-8 justify-center"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.7, delay: 0.2 } },
-            }}
+          
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
               <Link

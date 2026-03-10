@@ -65,15 +65,12 @@ export default function CardsHero({ block }: WhyBlockProps) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+        
           viewport={{ once: true }}
         >
           {cards.map((card, index) => (
             <motion.div
               key={card.id}
-              variants={cardVariants}
               className="flex flex-col h-full bg-white shadow-lg overflow-hidden rounded-sm transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               style={{
                 borderTop: `3px solid ${index % 2 === 0 ? '#cb8547' : '#f0f1f0'}`,

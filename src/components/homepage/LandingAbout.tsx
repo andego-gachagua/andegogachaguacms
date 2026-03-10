@@ -59,18 +59,17 @@ export default function AboutUsSection({ block }: AboutUsBlockProps) {
         <motion.div
           initial="hidden"
           animate={controls}
-          variants={staggerContainer}
           className="max-w-5xl mx-auto"
         >
           {/* Elegant section header */}
-          <motion.div variants={fadeIn} className="text-center mb-6">
+          <motion.div className="text-center mb-6">
             <span className="inline-block px-4 py-1 text-[#cb8547] text-sm font-medium tracking-wider uppercase border-b border-[#cb8547]">
               About Us
             </span>
           </motion.div>
 
           {/* Main heading */}
-          <motion.div variants={fadeIn} className="text-center mb-10">
+          <motion.div className="text-center mb-10">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold text-gray-900 relative inline-block">
               {heading}
               <div className="absolute -bottom-2 left-0 w-full h-px bg-[#cb8547] opacity-50" />
@@ -78,14 +77,14 @@ export default function AboutUsSection({ block }: AboutUsBlockProps) {
           </motion.div>
 
           {/* Description with refined typography */}
-          <motion.div variants={fadeIn} className="mb-12">
+          <motion.div className="mb-12">
             <p className="text-gray-700 leading-relaxed text-base md:text-lg font-light text-justify">
               {description}
             </p>
           </motion.div>
 
           {/* Decorative divider */}
-          <motion.div variants={fadeIn} className="flex justify-center my-10">
+          <motion.div className="flex justify-center my-10">
             <div className="flex items-center w-full max-w-xs">
               <div className="flex-grow h-px bg-[#f0f1f0]"></div>
               <div className="mx-4">
@@ -108,7 +107,7 @@ export default function AboutUsSection({ block }: AboutUsBlockProps) {
           </motion.div>
 
           {/* CTA with professional styling */}
-          <motion.div variants={fadeIn} className="text-center mt-10">
+          <motion.div className="text-center mt-10">
             <Link
               href="/who-we-are"
               className="inline-flex items-center justify-center px-6 py-3 border border-[#cb8547] text-[#cb8547] bg-white hover:bg-[#cb8547] hover:text-white font-medium transition-colors duration-300 ease-in-out"
@@ -132,7 +131,7 @@ export default function AboutUsSection({ block }: AboutUsBlockProps) {
           </motion.div>
 
           {/* Subtle bottom decoration */}
-          <motion.div variants={fadeIn} className="mt-16 flex justify-center">
+          <motion.div className="mt-16 flex justify-center">
             <div className="w-16 h-1 bg-[#cb8547] opacity-40"></div>
           </motion.div>
         </motion.div>
