@@ -126,7 +126,7 @@ export default function AboutHero({ block }: AboutHeroBlockProps) {
                   width={600}
                   height={400}
                   priority
-                  alt="LilanKichwenKadima Law Firm"
+                  alt="Andego Gachagua Law Firm"
                   className="object-cover transition-transform duration-700 hover:scale-105 "
                 />
               </div>
